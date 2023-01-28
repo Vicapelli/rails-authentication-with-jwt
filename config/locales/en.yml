@@ -30,4 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: "Passwords"
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: "already exists."
+            email:
+              taken: "already exists."
+            password_confirmation:
+              confirmation: "does not match."
+
