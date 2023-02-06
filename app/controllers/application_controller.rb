@@ -8,7 +8,13 @@ class ApplicationController < ActionController::API
     def authenticate_user
         header = request.headers["Authorization"]
         header = header.split(' ').last if header
-        decoded = jwt_decode(header)
+        begin
+            decoded = jwt_decode(header)
+        rescue JWT::ExpiredSignature
+            render json: { errors: "token expired" }, status: 477 and return
+        rescue JWT::DecodeError
+            render json: { errors: "invalid_token" }, status: :unauthorized and return
+        end
         @current_user = User.find(decoded[:user_id])
     end
 
