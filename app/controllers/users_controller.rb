@@ -2,7 +2,9 @@ class UsersController < ApplicationController
     skip_before_action :authenticate_user, only: [:create]
     
     def index
-        users = User.all
+        users = Rails.cache.fetch("users_list") do
+            User.all.exclude_passwords.pluck(:id, :username, :email)
+        end
         render json: users
     end
 
