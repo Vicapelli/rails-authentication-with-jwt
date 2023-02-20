@@ -28,6 +28,7 @@ gem "byebug"
 gem 'dotenv-rails'
 gem 'sneakers', '~> 2.12.0'
 gem 'bunny',    '~> 2.14.4'
+gem 'rack-attack'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
