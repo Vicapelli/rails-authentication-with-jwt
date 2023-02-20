@@ -42,6 +42,8 @@ en:
               taken: "already exists."
             email:
               taken: "already exists."
+            password:
+              invalid: "must have at least one lowercase letter, one uppercase letter, one digit, one special character, and is at least eight characters long."
             password_confirmation:
               confirmation: "does not match."
 
