@@ -1,4 +1,4 @@
-Rack::Attack.throttle("requests by ip", limit: 1, period: 5.minutes) do |request|
+Rack::Attack.throttle("requests by ip", limit: 10, period: 5.minutes) do |request|
     if request.path === '/auth/login'
         request.ip
     end

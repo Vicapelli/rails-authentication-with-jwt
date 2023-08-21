@@ -5,7 +5,7 @@ class Consumer
   from_queue :somavitu
 
   def work(msg)
-    puts "Worker do sneakers recebeu a mensagem: #{msg}" 
+    puts "Worker do sneakers recebeu a mensagem: #{msg}"
     ack!
   end
 end

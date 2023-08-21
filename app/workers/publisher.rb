@@ -1,8 +1,8 @@
-require "bunny"
-require "sneakers"
+require 'bunny'
+require 'sneakers'
 module Publisher
   class Sender
-    
+
     def self.publish
       conn = Bunny.new(hostname: ENV['RABBIT_HOST'], username: ENV['RABBIT_USER'], password: ENV['RABBIT_PASSWORD'])
       conn.start
